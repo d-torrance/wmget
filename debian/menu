@@ -1,0 +1,1 @@
+?package(wmget): needs="X11" section="Apps/Tools" title="wmget" command="/usr/bin/wmget dock"

@@ -1,0 +1,30 @@
+#! /bin/sh -e
+
+
+patch_opts="${patch_opts:--f --no-backup-if-mismatch ${2:+-d $2}}"
+
+if [ $# -ne 1 ]; then
+    echo >&2 "`basename $0`: script expects -patch|-unpatch as argument"
+    exit 1
+fi
+case "$1" in
+	-patch) patch $patch_opts -p0 < $0;;
+	-unpatch) patch $patch_opts -R -p0 < $0;;
+	*)
+		echo >&2 "`basename $0`: script expects -patch|-unpatch as argument"
+		exit 1;;
+esac
+ 
+exit 0
+
+@DPATCH@
+--- Makefile.orig	2004-06-05 10:48:30.000000000 +0200
++++ Makefile	2004-06-05 10:48:52.000000000 +0200
+@@ -83,8 +83,8 @@
+ 		echo $(PREFIX) > install.prefix ; \
+ 		$(INSTALLDIR) $(PREFIX)/bin ; \
+ 		$(INSTALLBIN) wmget $(PREFIX)/bin/wmget ; \
+-		$(INSTALLDIR) $(PREFIX)/man/man1 ; \
+-		$(INSTALLMAN) wmget.1 $(PREFIX)/man/man1/wmget.1 ; \
++		$(INSTALLDIR) $(PREFIX)/share/man/man1 ; \
++		$(INSTALLMAN) wmget.1 $(PREFIX)/share/man/man1/wmget.1 ; \
