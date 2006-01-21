@@ -1,3 +1,10 @@
+wmget (0.6.0-1.2) unstable; urgency=low
+
+  * Non-maintainer upload
+  * Splitted xlibs-dev build-dep (Closes: #347081)
+
+ -- Marc 'HE' Brockschmidt <he@debian.org>  Sat, 21 Jan 2006 11:10:41 +0100
+
 wmget (0.6.0-1.1) unstable; urgency=low
 
   * Non-maintainer upload.
