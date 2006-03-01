@@ -1,9 +1,9 @@
 Source: wmget
 Section: x11
 Priority: optional
-Maintainer: Rafal Zawadzki <bluszcz@jabberpl.org>
-Build-Depends: debhelper (>> 4.0.0), libc6-dev, libcurl3-dev, libx11-dev, libxext-dev, libxpm-dev, x-dev, dpatch
-Standards-Version: 3.6.1
+Maintainer: Debian QA Group <packages@qa.debian.org>
+Build-Depends: debhelper (>= 5), libcurl3-dev, libx11-dev, libxext-dev, libxpm-dev, x-dev, dpatch
+Standards-Version: 3.6.2
 
 Package: wmget
 Architecture: any

@@ -1,3 +1,17 @@
+wmget (0.6.0-2) unstable; urgency=low
+
+  * QA upload.
+  * Package is orphaned (#352435); set maintainer to Debian QA Group.
+  * Switch to debhelper 5.
+  * Remove build dependency on libc6-dev; it's build-essential.
+  * debian/rules:
+    - Pass CFLAGS to the upstream Makefile for DEB_BUILD_OPTIONS=noopt.
+    - Let dh_strip handle DEB_BUILD_OPTIONS=nostrip.
+  * debian/watch: Add.
+  * Conforms to Standards version 3.6.2.
+
+ -- Matej Vela <vela@debian.org>  Wed,  1 Mar 2006 20:39:22 +0100
+
 wmget (0.6.0-1.2) unstable; urgency=low
 
   * Non-maintainer upload
