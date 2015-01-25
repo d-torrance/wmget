@@ -6,6 +6,7 @@ Description: Update Makefile.
  - Introduce LIBS variable to fix linking order and avoid "undefined reference"
    errors during build.
  - Remove unnecessary inclusion of CFLAGS during linking.
+ - Honor DESTDIR variable.
 Author: Doug Torrance <dtorrance@monmouthcollege.edu>
 Last-Update: 2015-01-25
 
@@ -21,14 +22,18 @@ Last-Update: 2015-01-25
  DOCS=		wmget.1
  
  VERSION:=	$(shell grep '\#define WMGET_VERSION ' wmget.h \
-@@ -83,15 +84,15 @@
+@@ -81,17 +82,17 @@
+ 
+ install:	all
  		echo $(PREFIX) > install.prefix ; \
- 		$(INSTALLDIR) $(PREFIX)/bin ; \
- 		$(INSTALLBIN) wmget $(PREFIX)/bin/wmget ; \
+-		$(INSTALLDIR) $(PREFIX)/bin ; \
+-		$(INSTALLBIN) wmget $(PREFIX)/bin/wmget ; \
 -		$(INSTALLDIR) $(PREFIX)/man/man1 ; \
 -		$(INSTALLMAN) wmget.1 $(PREFIX)/man/man1/wmget.1 ; \
-+		$(INSTALLDIR) $(PREFIX)/share/man/man1 ; \
-+		$(INSTALLMAN) wmget.1 $(PREFIX)/share/man/man1/wmget.1 ; \
++		$(INSTALLDIR) $(DESTDIR)$(PREFIX)/bin ; \
++		$(INSTALLBIN) wmget $(DESTDIR)$(PREFIX)/bin/wmget ; \
++		$(INSTALLDIR) $(DESTDIR)$(PREFIX)/share/man/man1 ; \
++		$(INSTALLMAN) wmget.1 $(DESTDIR)$(PREFIX)/share/man/man1/wmget.1 ; \
  
  uninstall:
  		cd `cat install.prefix` && rm -f bin/wmget man/man1/wmget.1
