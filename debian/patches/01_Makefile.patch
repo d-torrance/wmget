@@ -1,9 +1,27 @@
-Description: Install Makefile in /usr/share/man instead of /usr/man.
-Last-Update: 2015-01-24
+Description: Update Makefile.
+ In particular,
+ - Install Makefile in /usr/share/man instead of /usr/man. (This was the only
+   purpose of the dpatch version of this patch that existed prior to version
+   0.6.0-4.)
+ - Introduce LIBS variable to fix linking order and avoid "undefined reference"
+   errors during build.
+ - Remove unnecessary inclusion of CFLAGS during linking.
+Author: Doug Torrance <dtorrance@monmouthcollege.edu>
+Last-Update: 2015-01-25
 
 --- a/Makefile
 +++ b/Makefile
-@@ -83,8 +83,8 @@
+@@ -54,7 +54,8 @@
+ CFLAGS=		-Wall -W -I/usr/X11R6/include -O
+ # The following line is what I use during development
+ #CFLAGS:=	$(CFLAGS) -Werror -g 
+-LDFLAGS=	-L/usr/X11R6/lib -lXpm -lXext -lX11 -lm -lcurl
++LDFLAGS=	-L/usr/X11R6/lib
++LIBS=		-lXpm -lXext -lX11 -lm -lcurl
+ DOCS=		wmget.1
+ 
+ VERSION:=	$(shell grep '\#define WMGET_VERSION ' wmget.h \
+@@ -83,15 +84,15 @@
  		echo $(PREFIX) > install.prefix ; \
  		$(INSTALLDIR) $(PREFIX)/bin ; \
  		$(INSTALLBIN) wmget $(PREFIX)/bin/wmget ; \
@@ -14,3 +32,11 @@ Last-Update: 2015-01-24
  
  uninstall:
  		cd `cat install.prefix` && rm -f bin/wmget man/man1/wmget.1
+ 		rm -f install.prefix
+ 
+ wmget:		dockapplib $(OBJS)
+-		$(CC) $(CFLAGS) $(LDFLAGS) $(OBJS) $(DALIB) -o $@
++		$(CC) $(LDFLAGS) $(OBJS) $(DALIB) -o $@ $(LIBS)
+ 
+ 
+ ##### LIBRARY ##########################################################
