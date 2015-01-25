@@ -2,7 +2,8 @@ Source: wmget
 Section: x11
 Priority: optional
 Maintainer: Doug Torrance <dtorrance@monmouthcollege.edu>
-Build-Depends: debhelper (>= 5), libcurl3-dev, libx11-dev, libxext-dev, libxpm-dev, x11proto-core-dev, dpatch
+Build-Depends: debhelper (>= 9), libcurl3-dev, libx11-dev, libxext-dev,
+ libxpm-dev, x11proto-core-dev, dpatch
 Standards-Version: 3.6.2
 
 Package: wmget
