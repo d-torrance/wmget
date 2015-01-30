@@ -1,6 +1,6 @@
 wmget (0.6.0-4) UNRELEASED; urgency=medium
 
-  * New maintainer (Closes: #XXX).
+  * New maintainer (Closes: #776650).
   * debian/compat
     - Bump to 9.
   * debian/control
@@ -23,6 +23,7 @@ wmget (0.6.0-4) UNRELEASED; urgency=medium
     - Convert to quilt, add DEP3 header, and rename to 01_Makefile.patch.
     - Tidy up build flags and fix linking order.
     - Honor DESTDIR variable.
+    - Drop unnecessary -lm from LIBS.
   * debian/patches/fix_resource_leaks.patch
     - New patch; call fclose() on all the files we fopen().
   * debian/patches/fix_-Wpointer-to-int-cast.patch
@@ -37,7 +38,7 @@ wmget (0.6.0-4) UNRELEASED; urgency=medium
   * debian/source/format
     - New file; use 3.0 (quilt).
 
- -- Doug Torrance <dtorrance@monmouthcollege.edu>  Fri, 30 Jan 2015 08:36:26 -0600
+ -- Doug Torrance <dtorrance@monmouthcollege.edu>  Fri, 30 Jan 2015 09:05:19 -0600
 
 wmget (0.6.0-3) unstable; urgency=low
 
