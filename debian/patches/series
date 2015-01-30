@@ -1,1 +1,2 @@
 01_Makefile.patch
+fix_-Wpointer-to-int-cast.patch

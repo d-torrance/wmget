@@ -1,0 +1,34 @@
+Description: Fix -Wpointer-to-int-cast compiler warnings.
+ In particular, use intptr_t instead of int.
+Author: Doug Torrance <dtorrance@monmouthcollege.edu>
+Last-Update: 2015-01-30
+
+--- a/server.c
++++ b/server.c
+@@ -949,7 +949,7 @@
+ static dockapp_rv_t on_click_pbar (
+         void *cbdata, int x_unused, int y_unused)
+ {
+-    int which = (int)cbdata;
++    int which = (intptr_t)cbdata;
+     (void)x_unused;
+     (void)y_unused;
+ 
+@@ -969,7 +969,7 @@
+ static dockapp_rv_t on_click_stop (
+         void *cbdata, int x_unused, int y_unused)
+ {
+-    int which = (int)cbdata;
++    int which = (intptr_t)cbdata;
+     (void)x_unused;
+     (void)y_unused;
+ 
+@@ -1047,7 +1047,7 @@
+  */
+ int server (int argc, char **argv)
+ {
+-    int i;
++    intptr_t i;
+ 
+     config_server (argc, argv, &config);
+ 
