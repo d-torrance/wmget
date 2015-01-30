@@ -1,0 +1,25 @@
+Description: Fix resource leaks.
+ In particular, fclose() all the files we fopen().
+Author: Doug Torrance <dtorrance@monmouthcollege.edu>
+Last-Update: 2015-01-30
+
+--- a/configure.c
++++ b/configure.c
+@@ -373,6 +373,7 @@
+ 
+     if ((rcfp = fopen (rcfile, "rt"))) {
+         read_rcfile (rcfp, cfg);
++        fclose (rcfp);
+     } else {
+         /* rcfiles are fully optional... */
+         debug_sys ("Could not open rcfile '%s'", rcfile);
+--- a/retrieve.c
++++ b/retrieve.c
+@@ -98,6 +98,7 @@
+     fprintf (error_file, " To file: %s\n", job->options.save_to);
+     fprintf (error_file, " Error: %s\n", msg);
+     fprintf (error_file, " (" WMGET_VERSION_BANNER ")\n");
++    fclose (error_file);
+ }
+ 
+ 

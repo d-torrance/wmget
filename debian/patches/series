@@ -1,2 +1,3 @@
 01_Makefile.patch
 fix_-Wpointer-to-int-cast.patch
+fix_resource_leaks.patch
