@@ -43,7 +43,7 @@ wmget (0.6.0-3) unstable; urgency=low
 
   * QA upload.
   * Replace build-dependency on x-dev by x11proto-core-dev (Closes: #515406).
-  * Changed menu section to "Applications/Network/File Transfer"
+  * Change menu section to "Applications/Network/File Transfer".
 
  -- Ralf Treinen <treinen@debian.org>  Sat, 21 Feb 2009 08:54:25 +0100
 
@@ -53,72 +53,72 @@ wmget (0.6.0-2) unstable; urgency=low
   * Package is orphaned (#352435); set maintainer to Debian QA Group.
   * Switch to debhelper 5.
   * Remove build dependency on libc6-dev; it's build-essential.
-  * debian/rules:
+  * debian/rules
     - Pass CFLAGS to the upstream Makefile for DEB_BUILD_OPTIONS=noopt.
     - Let dh_strip handle DEB_BUILD_OPTIONS=nostrip.
-  * debian/watch: Add.
+  * debian/watch
+    - Add.
   * Conforms to Standards version 3.6.2.
 
  -- Matej Vela <vela@debian.org>  Wed,  1 Mar 2006 20:39:22 +0100
 
 wmget (0.6.0-1.2) unstable; urgency=low
 
-  * Non-maintainer upload
-  * Splitted xlibs-dev build-dep (Closes: #347081)
+  * Non-maintainer upload.
+  * Split xlibs-dev build-dep (Closes: #347081).
 
  -- Marc 'HE' Brockschmidt <he@debian.org>  Sat, 21 Jan 2006 11:10:41 +0100
 
 wmget (0.6.0-1.1) unstable; urgency=low
 
   * Non-maintainer upload.
-  * Switched to libcurl3-dev (closes: #279454).
+  * Switch to libcurl3-dev (Closes: #279454).
 
  -- Domenico Andreoli <cavok@debian.org>  Wed, 22 Dec 2004 18:08:27 +0100
 
 wmget (0.6.0-1) unstable; urgency=low
 
-  * Closes: #252717: New upstream release available (0.6.0)
-  * Closes: #227175: binary should be in /usr/bin, not /bin
-  * Change email maintainer
-  
+  * New upstream release (Closes: #252717).
+  * Move binary to /usr/bin from /bin (Closes: #227175).
+  * Change maintainer email.
+
  -- Rafal Zawadzki <bluszcz@jabberpl.org>  Sat,  5 Jun 2004 00:34:50 +0200
 
 wmget (0.5.0-1) unstable; urgency=low
-  
-  * New upstream release.  
-  * Wmget now follows HTTP redirects. Closes: #162989
-  * Fix error when invoking a download from command line. Closes: #176558
+
+  * New upstream release.
+  * Follow HTTP redirects (Closes: #162989).
+  * Fix error when invoking a download from command line (Closes: #176558).
 
  -- Rafal Zawadzki <bluszcz@ats.com.pl>  Thu,  9 Feb 2003 09:37:38 +0200
 
 wmget (0.4.4-2) unstable; urgency=low
 
-  * Fix debian/control file. Closes: #165559
+  * Fix debian/control file (Closes: #165559).
 
  -- Rafal Zawadzki <bluszcz@ats.com.pl>  Tue, 29 Oct 2002 11:58:20 +0200
 
 wmget (0.4.4-1) unstable; urgency=low
 
-  * New upstream release
+  * New upstream release.
 
  -- Rafal Zawadzki <bluszcz@ats.com.pl>  Thu, 20 Jun 2002 15:08:41 +0200
 
 wmget (0.4.3-1) unstable; urgency=low
 
-  * New upstream release
+  * New upstream release.
 
  -- Rafal Zawadzki <bluszcz@ats.com.pl>  Tue, 18 Jun 2002 09:34:08 +0200
 
 wmget (0.4.2-2) unstable; urgency=low
 
   * Compile errors on hppa, patch by LaMont Jones (lamont@security.hp.com),
-    Closes: #150003
+    (Closes: #150003).
 
  -- Rafal Zawadzki <bluszcz@ats.com.pl>  Mon, 17 Jun 2002 11:50:02 +0200
 
 wmget (0.4.2-1) unstable; urgency=low
 
-  * Initial Release.
+  * Initial release.
 
  -- Rafal Zawadzki <bluszcz@ats.com.pl>  Fri, 31 May 2002 10:54:37 +0200
-
