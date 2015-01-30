@@ -1,4 +1,4 @@
-wmget (0.6.0-4) UNRELEASED; urgency=medium
+wmget (0.6.0-4) unstable; urgency=medium
 
   * New maintainer (Closes: #776650).
   * debian/compat
