@@ -1,3 +1,44 @@
+wmget (0.6.0-4) UNRELEASED; urgency=medium
+
+  * New maintainer (Closes: #XXX).
+  * debian/compat
+    - Bump to 9.
+  * debian/control
+    - Bump versioned dependency on debhelper to >=9.
+    - Bump Standards-Version to 3.9.6.
+    - Add Homepage and Vcs-*.
+    - Remove trailing whitespace from Description.
+    - Add ${misc:Depends} to Depends.
+    - Remove dpatch from Build-Depends.
+    - Switch Build-Depends on libcurl3-dev to libcurl4-openssl-dev.
+    - Add ${perl:Depends} to Depends.
+  * debian/copyright
+    - Update to DEP5 machine-readable format v1.0.
+  * debian/docs
+    - Remove wmget.refentry.xml; this is the source file for the manpage,
+      not user-readable documentation.
+  * debian/{docs,install}
+    - Move wmget-test.pl from /usr/share/doc/wmget to /usr/share/wmget.
+  * debian/patches/01_Makefile.dpatch
+    - Convert to quilt, add DEP3 header, and rename to 01_Makefile.patch.
+    - Tidy up build flags and fix linking order.
+    - Honor DESTDIR variable.
+  * debian/patches/fix_resource_leaks.patch
+    - New patch; call fclose() on all the files we fopen().
+  * debian/patches/fix_-Wpointer-to-int-cast.patch
+    - New patch; fix compiler warnings.
+  * debian/rules
+    - Add get-orig-source target.
+    - Update to use dh.
+    - Add override_dh_auto_build target to use CFLAGS and LDFLAGS from
+      dpkg-buildflags.
+    - Add override_dh_auto_install target to set PREFIX to /usr and use
+      LDFLAGS from dpkg-buildflags.
+  * debian/source/format
+    - New file; use 3.0 (quilt).
+
+ -- Doug Torrance <dtorrance@monmouthcollege.edu>  Fri, 30 Jan 2015 08:36:26 -0600
+
 wmget (0.6.0-3) unstable; urgency=low
 
   * QA upload.
