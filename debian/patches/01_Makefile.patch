@@ -7,8 +7,9 @@ Description: Update Makefile.
    errors during build.
  - Remove unnecessary inclusion of CFLAGS during linking.
  - Honor DESTDIR variable.
+ - Drop unnecessary -lm from LIBS.
 Author: Doug Torrance <dtorrance@monmouthcollege.edu>
-Last-Update: 2015-01-25
+Last-Update: 2015-01-30
 
 --- a/Makefile
 +++ b/Makefile
@@ -18,7 +19,7 @@ Last-Update: 2015-01-25
  #CFLAGS:=	$(CFLAGS) -Werror -g 
 -LDFLAGS=	-L/usr/X11R6/lib -lXpm -lXext -lX11 -lm -lcurl
 +LDFLAGS=	-L/usr/X11R6/lib
-+LIBS=		-lXpm -lXext -lX11 -lm -lcurl
++LIBS=		-lXpm -lXext -lX11 -lcurl
  DOCS=		wmget.1
  
  VERSION:=	$(shell grep '\#define WMGET_VERSION ' wmget.h \
