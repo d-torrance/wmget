@@ -37,8 +37,10 @@ wmget (0.6.0-4) unstable; urgency=medium
       LDFLAGS from dpkg-buildflags.
   * debian/source/format
     - New file; use 3.0 (quilt).
+  * debian/watch
+    - Bump version to 3.
 
- -- Doug Torrance <dtorrance@monmouthcollege.edu>  Fri, 30 Jan 2015 09:05:19 -0600
+ -- Doug Torrance <dtorrance@monmouthcollege.edu>  Wed, 11 Feb 2015 09:02:30 -0600
 
 wmget (0.6.0-3) unstable; urgency=low
 
